@@ -1,28 +1,81 @@
+# Setting Up a Vue.js Application on a Server
 
+This guide will walk you through the steps necessary to set up a Vue.js application on a server.
 
-## Objective
+## Prerequisites
 
-Design and implement a front-end for options strategy risk and reward analysis using Vue.
+- A server with SSH access
+- Basic knowledge of using SSH and terminal commands
+- Node.js and npm installed on the server (refer to Step 2 for installation)
+- Vue CLI installed on the server (refer to Step 3 for installation)
+- Git installed on the server
+- A terminal application (like Terminal on macOS/Linux or Command Prompt/PowerShell on Windows)
 
-## Brief
+## Step 1: Connect to Your Server
 
-Your challenge is to create a Vue component that can generate a risk & reward graph for options strategies. The component should accept an input of up to four options contracts and output the following:
-1. A risk & reward graph where X is the price of the underlying at the time of expiry and Y is the profit/loss at that price. 
-2. Max profit, max loss, and all break even points.
+1. Open your terminal (or Command Prompt on Windows).
+2. Connect to your server using SSH:
+    ```sh
+    ssh user@your-server-ip
+    ```
 
-### Evaluation Criteria
+## Step 2: Install Node.js and npm
 
-- Completeness of the logic
-- Usability of the graph
-- Aesthetics of the UI
-- Readability and code structure
+1. Update the package index:
+    ```sh
+    sudo apt update
+    ```
+2. Install Node.js and npm:
+    ```sh
+    sudo apt install -y nodejs npm
+    ```
 
-### CodeSubmit 
+## Step 3: Install Vue CLI
 
-Please organize, design, test, and document your code as if it were
-going into production - then push your changes to the main branch.
+1. Install Vue CLI globally:
+    ```sh
+    sudo npm install -g @vue/cli
+    ```
 
-Reply to the invitation e-mail with your github username to notify of completion.
+## Step 4: Clone Your Vue.js Application Repository
 
-Have fun coding! 🚀
-The Aries Financial Team
+1. Navigate to the directory where you want to clone your Vue.js application:
+    ```sh
+    cd /path/to/your/directory
+    ```
+2. Ensure Git is installed:
+    ```sh
+    sudo apt install -y git
+    ```
+3. Clone your application repository:
+    ```sh
+    git clone https://github.com/aleem-333/aries-vue-challenge.git
+    ```
+
+## Step 5: Build and Serve Your Vue.js Application
+
+1. Navigate to your Vue.js application directory:
+    ```sh
+    cd aries-vue-challenge
+    ```
+2. Install project dependencies:
+    ```sh
+    npm install
+    ```
+3. Build your Vue.js application for production:
+    ```sh
+    npm run build
+    ```
+4. Install a simple HTTP server to serve your application:
+    ```sh
+    sudo npm install -g serve
+    ```
+5. Serve your application:
+    ```sh
+    serve -s dist
+    ```
+
+## Troubleshooting
+
+- Ensure your server's firewall settings allow traffic on the necessary ports (SSH, HTTP).
+- Check your Vue.js application logs for errors.
